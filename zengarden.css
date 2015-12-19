@@ -1,9 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
+/* ================================= 
+  Base Element Styles
+==================================== */
+
 body {
 	background-image: url(img/cubes.png);
 	background-repeat: repeat;
 	height: 800px;
+}
+
+abbr {
+	border-bottom: none !important;
+	cursor: default !important;
 }
 
 header {
@@ -16,19 +25,22 @@ header {
 	font-family: 'Raleway', sans-serif;
 }
 
-header h1{
-	text-align: right;
-	font-size: 30px;
+header h1 {
+	text-align: left;
+	font-size: 40px;
 	color: white;
 	text-shadow: 1px 3px 2px #DA96CB;
-	margin-right: 20px;
-	padding: 10px 15px;
+	
+	margin-left: 20px;
 }
 
 header h2 {
+	font-size: 70px;
 	text-align: center;
 	margin: 200px 0;
-
+	
+	color: pink;
+	text-shadow: 2px -5px 0.5px rgba(0,0,200,0.2);
 }
 
 ul {
@@ -38,59 +50,120 @@ ul {
 }
 
 footer {
+
 	clear:both;
 	padding: 1em 2em;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
+footer a{
+	color:white;
 
-.summary{
+}
+
+footer a:hover {
+	color: pink;
+
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+.intro h2:hover {
+	
+	transform: rotate();
+	transform-origin: center;
+	transform: scale();
+
+	animation: wow 2s;
+}
+
+.summary {
 	margin-top: 200px;
 	margin-left: 3%;
-
 }
 
 .preamble {
 	margin: 100px 3%;
 }
 
-.explanation, .participation{
-	float:left;
-	margin-left:3%;
-	padding: 3% 0;
-
-}
-.benefits, .requirements {
-	float:left;
-	margin-left:3%;
-	padding: 3% 0; 
-
-}
-
-.explanation { width: 40%}
-.participation { width: 40%}
-.benefits { width: 40% }
-.requirements { width: 40%}
-
-.wrapper {
-	display: flex;
-	flex-direction: row;	
-	position: absolute;
-	top: 2em;
-	left: 2em;
-}
-
-
-
-
-/*p {
-	/*display: inline-block;
-	display: flex;
-	flex-wrap: wrap;
-	margin-inline-end: 1em;
-	spadding: 5px 0;
+.main h3{
+	text-align: center;
 	
 }
-/*.main h3{
-	text-align: center;	
-	margin-bottom: 40px auto;
-}*/
+
+.main {
+	display: flex;	
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	text-align: left;
+
+	margin: 3%;
+}
+
+	.explanation {
+		order: 0;
+		width: 600px;
+		margin-right: 8%; 
+
+	}
+	
+	.participation {
+		order: 1;
+		width: 600px;
+		margin-right: 8%;
+	}
+	
+	.benefits {
+		order: 2;
+		width: 600px;
+		margin-right: 8%;
+		margin-top: 40px;
+		
+	}
+	
+	.requirements {
+		order: 3;
+		width: 600px;
+		margin-right: 8%;
+		margin-top: 40px;
+		
+	}
+
+.wrapper {
+	display:flex;
+	justify-content: space-around;
+	align-items: baseline;
+	width: auto;
+	margin-bottom: 40px;	
+
+}
+
+/* ================================= 
+   Media Query
+==================================== */
+
+@keyframes wow {
+	0% {transform: translateY(20px)}
+
+	25% {transform: translateY(-10px)}
+
+	75% {transform: scale()}
+
+	100% {transform: scale()}
+}
+
+@media (max-width: 768px) {
+	.main {
+		
+		
+	}
+
+	/*.wrapper {
+		background-color: black;
+	}*/
+}
